@@ -23,7 +23,17 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+  const resultArray = [];
+
+  for(let i = 0; i < this.length; i++) {
+    if(this[i] === undefined) continue;
+    // element, index, array
+    if(callbackFn(this[i], i, this)) {
+      resultArray[resultArray.length] = this[i];
+    }
+  }
+
+  return resultArray;
 };
 
 // SOME //
