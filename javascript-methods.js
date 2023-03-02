@@ -73,17 +73,32 @@ Array.prototype.myReduce = function(callbackFn) {
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
-  // Place your code here.
+  for(let i = 0; i < this.length; i++) {
+    // searchElement, fromIndex
+    if(this[i] === searchElement) return true;
+  }
+
+  return false;
 };
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+  for(let i = 0; i < this.length; i++) {
+    // searchElement, fromIndex
+    if(this[i] === searchElement) return i;
+  }
+
+  return -1;
 };
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+  for(let i = this.length - 1; i >= 0; i--) {
+    // searchElement, fromIndex
+    if(this[i] === searchElement) return i;
+  }
+
+  return -1;
 };
 
 // KEYS //
