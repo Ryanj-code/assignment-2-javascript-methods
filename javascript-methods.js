@@ -60,7 +60,15 @@ Array.prototype.myEvery = function(callbackFn) {
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+  let accumulator = 0;
+
+  for(let i = 0; i < this.length; i++) {
+    if(this[i] === undefined) continue;
+    // accumulator, currentValue, currentIndex, array
+    accumulator = callbackFn(accumulator, this[i], i, this);
+  }
+
+  return accumulator;
 };
 
 // INCLUDES //
