@@ -49,12 +49,26 @@ Array.prototype.mySome = function(callbackFn) {
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+  for(let i = 0; i < this.length; i++) {
+    if(this[i] === undefined) continue;
+    // element, index, array
+    if(!callbackFn(this[i], i, this)) return false;
+  }
+
+  return true;
 };
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+  let accumulator = 0;
+
+  for(let i = 0; i < this.length; i++) {
+    if(this[i] === undefined) continue;
+    // accumulator, currentValue, currentIndex, array
+    accumulator = callbackFn(accumulator, this[i], i, this);
+  }
+
+  return accumulator;
 };
 
 // INCLUDES //
